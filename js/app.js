@@ -21,10 +21,46 @@ function render(){
   bind();
 }
 function renderHome(){
- return `<div class="container"><section class="hero"><div><div class="eyebrow">Banco de questões</div><h1>Biologia da UECE, organizada para estudar de verdade.</h1><p>Questões da 2ª fase, correção imediata, acompanhamento de desempenho e caderno de erros. A base foi estruturada para receber novas provas sem refazer o sistema inteiro, porque repetir trabalho é uma tradição humana que podemos dispensar.</p><button class="btn btn-primary" data-go="questoes">Começar a responder</button></div><div class="card" style="padding:24px;background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.18);color:#fff"><div class="eyebrow">Base atual</div><div style="font-size:52px;font-weight:900">${QUESTIONS.length}</div><div>questões cadastradas</div><div style="margin-top:18px" class="progressbar"><span style="width:${pct(answeredCount(),QUESTIONS.length)}%"></span></div><small style="display:block;margin-top:7px;color:#d9e9e2">${answeredCount()} respondidas · ${correctCount()} acertos</small></div></section>
- <div class="stats-grid"><div class="stat"><div class="value">${QUESTIONS.length}</div><div class="label">Questões disponíveis</div></div><div class="stat"><div class="value">${answeredCount()}</div><div class="label">Respondidas</div></div><div class="stat"><div class="value">${correctCount()}</div><div class="label">Acertos</div></div><div class="stat"><div class="value">${pct(correctCount(),answeredCount())}%</div><div class="label">Aproveitamento</div></div></div>
- <div class="section-title"><div><h2>O que já está funcionando</h2><p>Primeira versão do núcleo da plataforma.</p></div></div><div class="cards"><div class="feature card"><span class="tag">Questões</span><h3>Banco pesquisável</h3><p>Filtro por vestibular, status e busca textual.</p></div><div class="feature card"><span class="tag">Correção</span><h3>Resposta imediata</h3><p>O sistema mostra sua escolha e o gabarito oficial.</p></div><div class="feature card"><span class="tag">Desempenho</span><h3>Histórico local</h3><p>Acertos, erros e desempenho por edição ficam salvos neste dispositivo.</p></div></div>
- <div class="source">Base inicial: UECE, 2ª fase de Biologia, vestibulares 2025.1, 2025.2, 2026.1 e 2026.2. A situação do gabarito é mantida no banco de dados para permitir atualização futura.</div></div>`;
+ return `<div class="container hub-home">
+   <section class="hub-hero">
+     <div><div class="eyebrow">Seu espaço de estudos</div><h1>Um só lugar para acompanhar sua preparação.</h1><p>Escolha uma plataforma para continuar estudando. O BioUECE já está pronto; os próximos módulos serão adicionados por aqui.</p></div>
+     <div class="hub-hero-mark" aria-hidden="true">H<span>+</span></div>
+   </section>
+   <div class="section-title hub-section-title"><div><h2>Suas plataformas</h2><p>Comece pelo módulo disponível.</p></div></div>
+   <section class="platform-grid" aria-label="Plataformas de estudo">
+     <article class="platform-card platform-ready">
+       <div class="platform-icon" aria-hidden="true">🧬</div><span class="platform-status">Disponível</span>
+       <h3>Biologia UECE</h3><p>Questões da 2ª fase, correção imediata e acompanhamento do desempenho.</p>
+       <div class="platform-progress"><strong>${QUESTIONS.length}</strong><span>questões · ${answeredCount()} respondidas</span></div>
+       <button class="btn btn-primary" data-go="questoes">Abrir plataforma <span aria-hidden="true">→</span></button>
+     </article>
+     <article class="platform-card platform-soon">
+       <div class="platform-icon" aria-hidden="true">🔬</div><span class="platform-status">Em preparação</span>
+       <h3>ProfBio</h3><p>Um espaço para organizar conteúdos e estudos do ProfBio.</p>
+       <div class="platform-note">Este módulo será adicionado em uma próxima etapa.</div>
+     </article>
+     <article class="platform-card platform-soon">
+       <div class="platform-icon" aria-hidden="true">📊</div><span class="platform-status">Em preparação</span>
+       <h3>SPAECE</h3><p>Materiais e atividades de preparação para o SPAECE.</p>
+       <div class="platform-note">Este módulo será adicionado em uma próxima etapa.</div>
+     </article>
+     <article class="platform-card platform-future">
+       <div class="platform-icon" aria-hidden="true">📚</div><span class="platform-status">Futuro módulo</span>
+       <h3>Banco de Questões</h3><p>Um espaço geral para reunir questões de diferentes disciplinas e avaliações.</p>
+       <div class="platform-note">Planejado para uma próxima etapa.</div>
+     </article>
+   </section>
+   <section class="hub-overview" aria-label="Progresso geral">
+     <div class="hub-overview-heading"><div><span class="hub-summary-label">Progresso geral</span><p>Seu histórico de estudos no BioUECE neste dispositivo.</p></div><button class="btn btn-primary" data-continue>Continuar estudando <span aria-hidden="true">→</span></button></div>
+     <div class="stats-grid hub-stats"><div class="stat"><div class="value">${answeredCount()}</div><div class="label">Questões respondidas</div></div><div class="stat"><div class="value">${correctCount()}</div><div class="label">Acertos</div></div><div class="stat"><div class="value">${wrongCount()}</div><div class="label">No caderno de erros</div></div><div class="stat"><div class="value">${pct(correctCount(),answeredCount())}%</div><div class="label">Aproveitamento</div></div></div>
+   </section>
+   <section class="hub-summary" aria-label="Resumo do BioUECE">
+     <div><span class="hub-summary-label">Seu BioUECE</span><strong>${pct(correctCount(),answeredCount())}%</strong><span class="hub-summary-caption">de aproveitamento nas questões respondidas</span></div>
+     <div class="hub-summary-bar"><div class="progressbar"><span style="width:${pct(answeredCount(),QUESTIONS.length)}%"></span></div><small>${answeredCount()} de ${QUESTIONS.length} questões respondidas</small></div>
+     <button class="btn btn-ghost" data-go="desempenho">Ver desempenho</button>
+   </section>
+   <p class="hub-local-note">Seu progresso fica salvo neste dispositivo.</p>
+ </div>`;
 }
 function filtered(){
  let arr=QUESTIONS.filter(q=>state.filters.edition==='todas'||q.vestibular===state.filters.edition);
@@ -52,6 +88,7 @@ function renderErrors(){
 }
 function bind(){
  document.querySelectorAll('[data-go]').forEach(b=>b.onclick=()=>{location.hash=b.dataset.go});
+ document.querySelectorAll('[data-continue]').forEach(b=>b.onclick=()=>{const next=QUESTIONS.find(q=>!progress[q.id]);state.selectedId=(next||QUESTIONS[0])?.id||null;location.hash='questoes'});
  document.querySelectorAll('[data-qid]').forEach(b=>b.onclick=()=>{state.selectedId=b.dataset.qid;render()});
  document.querySelectorAll('[data-answer]').forEach(b=>b.onclick=()=>answer(b.dataset.answer));
  document.querySelectorAll('[data-review]').forEach(b=>b.onclick=()=>{state.selectedId=b.dataset.review;location.hash='questoes'});
