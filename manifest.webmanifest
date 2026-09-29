@@ -1,8 +1,8 @@
 {
   "id": "./",
-  "name": "BioUECE | Questões de Biologia da UECE",
-  "short_name": "BioUECE",
-  "description": "Questões de Biologia da UECE com correção e acompanhamento de desempenho.",
+  "name": "Hub Educacional | Plataformas de estudo",
+  "short_name": "Hub Educacional",
+  "description": "Acesse suas plataformas de estudo em um só lugar.",
   "lang": "pt-BR",
   "start_url": "./index.html",
   "scope": "./",

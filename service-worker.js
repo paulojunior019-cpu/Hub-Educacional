@@ -1,4 +1,4 @@
-const CACHE_NAME = 'biouece-v1-pwa-1';
+const CACHE_NAME = 'hub-educacional-pwa-2';
 const APP_FILES = [
   './', './index.html', './manifest.webmanifest', './css/style.css',
   './js/app.js', './data/questoes.json', './icons/icon.svg',
@@ -12,7 +12,7 @@ self.addEventListener('install', event => {
 
 self.addEventListener('activate', event => {
   event.waitUntil(caches.keys().then(keys => Promise.all(
-    keys.filter(key => key.startsWith('biouece-') && key !== CACHE_NAME).map(key => caches.delete(key))
+    keys.filter(key => (key.startsWith('biouece-') || key.startsWith('hub-educacional-')) && key !== CACHE_NAME).map(key => caches.delete(key))
   )));
   self.clients.claim();
 });
