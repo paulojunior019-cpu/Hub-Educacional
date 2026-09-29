@@ -1,0 +1,5 @@
+BioUECE — COMO INICIAR
+
+No Windows, abra INICIAR_BioUECE.bat. O navegador será aberto em http://localhost:8765/index.html.
+
+Para instalar no iPhone, publique a pasta em um endereço HTTPS, abra a página no Safari, toque em Compartilhar e escolha Adicionar à Tela de Início.
