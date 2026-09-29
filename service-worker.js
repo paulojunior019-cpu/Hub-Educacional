@@ -1,8 +1,8 @@
-const CACHE_NAME = 'hub-educacional-pwa-2';
+const CACHE_NAME = 'hub-educacional-pwa-3';
 const APP_FILES = [
   './', './index.html', './manifest.webmanifest', './css/style.css',
   './js/app.js', './data/questoes.json', './icons/icon.svg',
-  './icons/apple-touch-icon.png', './icons/icon-192.png', './icons/icon-512.png'
+  './icons/apple-touch-icon-v2.png', './icons/icon-192-v2.png', './icons/icon-512-v2.png'
 ];
 
 self.addEventListener('install', event => {

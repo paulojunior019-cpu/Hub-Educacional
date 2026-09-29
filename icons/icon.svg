@@ -1,6 +1,11 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-  <rect width="512" height="512" rx="112" fill="#063b2c"/>
-  <path d="M84 66h344v380H84z" fill="#063b2c"/>
-  <path d="M145 115h82v112h114V115h82v282h-82V298H227v99h-82z" fill="#a8d65e"/>
-  <circle cx="370" cy="130" r="34" fill="#fff" opacity=".96"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Hub Educacional">
+  <rect width="512" height="512" fill="#063b2c"/>
+  <path d="M76 267c65-30 128-19 180 15v153c-49-34-112-45-180-15V267Z" fill="#f2f8f3"/>
+  <path d="M436 267c-65-30-128-19-180 15v153c49-34 112-45 180-15V267Z" fill="#dceee2"/>
+  <path d="M256 283V139M256 226l-77-58m77 58 77-58" fill="none" stroke="#a8d65e" stroke-linecap="round" stroke-linejoin="round" stroke-width="20"/>
+  <circle cx="256" cy="128" r="31" fill="#a8d65e" stroke="#f2f8f3" stroke-width="10"/>
+  <circle cx="166" cy="160" r="31" fill="#a8d65e" stroke="#f2f8f3" stroke-width="10"/>
+  <circle cx="346" cy="160" r="31" fill="#a8d65e" stroke="#f2f8f3" stroke-width="10"/>
+  <circle cx="256" cy="283" r="25" fill="#063b2c" stroke="#a8d65e" stroke-width="12"/>
+  <path d="M256 282v136" stroke="#063b2c" stroke-width="9" opacity=".22"/>
 </svg>
